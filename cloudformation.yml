@@ -2,15 +2,15 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: 'Simple template to create ec2 instance'
 
 Parameters:
-  vpc_id:
+  vpcId:
     Description: Provide vpc-id
     Type: AWS::EC2::VPC::Id
 
-  ami_id:
+  amiId:
     Description: AWS EC2 AMI ID
     Type: String
 
-  instance_type:
+  instanceType:
     Description: EC2 instance type
     Type: String
 
@@ -18,7 +18,7 @@ Resources:
   EC2SecurityGroup:
        Type: AWS::EC2::SecurityGroup
        Properties:
-           VpcId: !Ref vpc_id
+           VpcId: !Ref vpcId
            GroupDescription: SecurityGroup to be attached to this ec2
            SecurityGroupIngress:
                # Only allow inbound access to ECS from the ELB
@@ -32,8 +32,8 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      SubnetId: !Ref ami_id
-      InstanceType: !Ref instance_type
+      SubnetId: !Ref amiId
+      InstanceType: !Ref instanceType
       SecurityGroupIds: ['sg-83b767f3']
       KeyName: 'cf-test'
       ImageId: 'ami-a9d09ed1'
