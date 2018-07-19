@@ -11,7 +11,7 @@ Parameters:
     Type: String
 
   instance_type:
-    Description: EC2 instance type ex: t2.micro
+    Description: EC2 instance type
     Type: String
 
 Resources:
