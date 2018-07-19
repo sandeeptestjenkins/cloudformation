@@ -32,11 +32,11 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      SubnetId: !Ref amiId
+      SubnetId: 'subnet-0103565b'
       InstanceType: !Ref instanceType
       SecurityGroupIds: ['sg-83b767f3']
       KeyName: 'cf-test'
-      ImageId: 'ami-a9d09ed1'
+      ImageId: !Ref amiId
   InstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
