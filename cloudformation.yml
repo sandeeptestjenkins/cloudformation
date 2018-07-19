@@ -4,7 +4,7 @@ Description: 'Simple template to create ec2 instance'
 Parameters:
   vpc_id:
     Description: Provide vpc-id
-    Type: String
+    Type: AWS::EC2::VPC::Id
 
   ami_id:
     Description: AWS EC2 AMI ID
